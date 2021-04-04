@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>chessboardjs Example #5002 - Random vs Random</title>
+  <base href="../" />
+  <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+  <link rel="stylesheet"
+      href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+      integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+      crossorigin="anonymous">
+  <link rel="stylesheet" href="./main/style.css">
+</head>
+<body>
+
+
+
+
+<!--- Begin Example HTML ------------------------------------------------------>
+<div id="myBoard" class="board"></div>
+<br>
+<div class="boardEditorGroup">
+
+</div>
+<button style="margin: 6px 0px" id="newGame">New Game</button>
+<br>
+<button id="boardEditor">Board Editor</button>
+<br>
+
+
+<br>
+
+<div id="gamePopup" class="popup">
+  <div class="popup-content-wrapper">
+    <span class="close">&times;</span>
+    <div class="popup-content">
+      <form id="gameForm" method="get">
+        <label for="startFen">Start FEN:</label>
+        <input type="text" name="startFen" id="startFen"></input>
+        <input type="radio" id="white" name="color" value="white" checked> <!-- [name] and [value] are used as key val pairs for JSON-->
+        <label for="white">White</label>
+        <input type="radio" id="black" name="color" value="black">
+        <label for="white">Black</label>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+<form id="fenEditorForm">
+  <label for="white">White</label>
+  <input type="radio" name="color" value="white" checked="true">
+  <label for="black">Black</label>
+  <input type="radio" name="color" value="black"> <!-- [name] and [value] are used as key val pairs for JSON-->
+  <br>
+  <br>
+  <label>White: </label>
+  <input type="checkbox" name="whiteShortCastle" value="true" checked>
+  <label for="whiteShortCastle">0-0</label>
+ 
+  <input type="checkbox" name="whiteLongCastle" value="true" checked>
+  <label for="whiteShortCastle">0-0-0</label>
+  <br>
+  <label>Black: </label>
+  <input type="checkbox" name="blackShortCastle" value="true" checked>
+  <label for="blackShortCastle">0-0</label>
+  
+  <input type="checkbox" name="blackLongCastle" value="true" checked>
+  <label for="blackLongCastle">0-0-0</label>
+  
+  <br><br>
+</form>
+
+<div id="info">
+  <label>Status:</label>
+  <div id="status"></div>
+  <label>FEN:</label>
+  <div id="fen"></div>
+  <label>PGN:</label>
+  <div id="pgn"></div>
+</div>
+
+<!--- End Example HTML -------------------------------------------------------->
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js" integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js" integrity="sha384-s3XgLpvmHyscVpijnseAmye819Ee3yaGa8NxstkJVyA6nuDFjt59u1QvuEl/mecz" crossorigin="anonymous"></script>
+<script>
+
+// --- Begin Example JS --------------------------------------------------------
+// NOTE: this example uses the chess.js library:
+// https://github.com/jhlywa/chess.js
+
+// var board = null
+// var game = new Chess()
+
+// function makeRandomMove () {
+//   var possibleMoves = game.moves()
+
+//   // exit if the game is over
+//   if (game.game_over()) return
+
+//   var randomIdx = Math.floor(Math.random() * possibleMoves.length)
+//   game.move(possibleMoves[randomIdx])
+//   board.position(game.fen())
+
+//   window.setTimeout(makeRandomMove, 100)
+// }
+
+// var config = {
+//     draggable: true,
+//     position: 'start'
+// }
+
+// board = Chessboard('myBoard', config);
+
+// window.setTimeout(makeRandomMove, 500)
+// --- End Example JS ----------------------------------------------------------
+</script>
+<script src="./main/ai.js"></script>
+<script src="./main/boardlogic.js"></script>
+<script src="./main/app.js"></script>
+<script src="./main/editBoard.js"></script>
+
+</body>
+</html>
